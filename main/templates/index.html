@@ -1,0 +1,15 @@
+﻿{% extends 'base.html' %}
+{% block content %}
+<div class = "row m-3">
+  <h1>Hello, world! </h1>
+  <a href="{% url 'blogs' %}" style="font-size:30px; text-decoration: none"> Блог</a>
+  <p>{{about_site}}</p>
+  <ul class="list-group">
+  {% for item in news %}
+    <li class="list-group-item">
+      {{item}}
+    </li>
+  {%endfor%}
+  </ul>
+{% endblock %}
+</div>

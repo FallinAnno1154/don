@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <ul class="list-group">
+    {% for blog in blogs %}
+      <li class="list-group-item">
+        <a href="{%url 'blog' blog.id %}" style="text-decoration: none">
+	{%if blog.image %}
+	  <img src='{{blog.image.url}}' width='80' height='50'style="margin-right:10px"/>
+	{%endif%}
+	  {{blog.title}}</a>
+      </li>
+    {%endfor%}
+    </ul>
+{% endblock %}
